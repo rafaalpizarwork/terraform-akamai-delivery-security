@@ -1,21 +1,25 @@
 # Staging Activation
 resource "akamai_property_activation" "delivery_property_staging" {
+  count = var.activate2staging ? 1 : 0
+
   property_id                    = akamai_property.delivery_property.id
   contact                        = var.contact_emails
   network                        = "STAGING"
   note                           = var.activation_note
   auto_acknowledge_rule_warnings = true
-  version                        = var.activate2staging ? akamai_property.delivery_property.latest_version : akamai_property.delivery_property.staging_version
+  version                        = akamai_property.delivery_property.latest_version
 }
 
 # Production Activation
 resource "akamai_property_activation" "delivery_property_production" {
+  count = var.activate2staging ? 1 : 0
+
   property_id                    = akamai_property.delivery_property.id
   contact                        = var.contact_emails
   network                        = "PRODUCTION"
   note                           = var.activation_note
   auto_acknowledge_rule_warnings = true
-  version                        = var.activate2production ? akamai_property.delivery_property.latest_version : akamai_property.delivery_property.production_version
+  version                        = akamai_property.delivery_property.latest_version
   dynamic "compliance_record" {
     for_each = var.compliance_record != null ? [1] : []
     content {

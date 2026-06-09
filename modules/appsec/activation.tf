@@ -1,4 +1,6 @@
 resource "akamai_appsec_activations" "appsec-activation-staging" {
+  count = var.activate2staging ? 1 : 0
+
   config_id           = akamai_appsec_configuration.config.config_id
   network             = "STAGING"
   note                = var.activation_note
@@ -7,9 +9,11 @@ resource "akamai_appsec_activations" "appsec-activation-staging" {
 }
 
 resource "akamai_appsec_activations" "appsec-activation-production" {
+  count = var.activate2production ? 1 : 0
+
   config_id           = akamai_appsec_configuration.config.config_id
   network             = "PRODUCTION"
   note                = var.activation_note
   notification_emails = var.contact_emails
-  version             = var.activate2production ? data.akamai_appsec_configuration.config.latest_version : data.akamai_appsec_configuration.config.production_version
+  version             = data.akamai_appsec_configuration.config.latest_version
 }
