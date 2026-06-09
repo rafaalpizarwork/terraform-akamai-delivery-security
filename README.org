@@ -25,9 +25,10 @@ and it adds the hostname to a defined already existent security configuration.
 2. Create terraform.tfvars file (example.tfvars as reference)
 3. Run: terraform Init
 4. Import security configuration to tfstate with below code:
-   ```bash
+   #+begin_src bash
    "terraform import module.appsec.akamai_appsec_configuration.config <your appsec configuration>"
-   ```
+   #+end_src
+
 5. Run: terraform Plan
 6. Run: terraform Apply
 
