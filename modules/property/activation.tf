@@ -3,7 +3,7 @@ resource "akamai_property_activation" "delivery_property_staging" {
   property_id                    = akamai_property.delivery_property.id
   contact                        = var.contact_emails
   network                        = "STAGING"
-  note                           = var.version_note
+  note                           = var.activation_note
   auto_acknowledge_rule_warnings = true
   version                        = var.activate2staging ? akamai_property.delivery_property.latest_version : akamai_property.delivery_property.staging_version
 }
@@ -13,7 +13,7 @@ resource "akamai_property_activation" "delivery_property_production" {
   property_id                    = akamai_property.delivery_property.id
   contact                        = var.contact_emails
   network                        = "PRODUCTION"
-  note                           = var.version_note
+  note                           = var.activation_note
   auto_acknowledge_rule_warnings = true
   version                        = var.activate2production ? akamai_property.delivery_property.latest_version : akamai_property.delivery_property.production_version
   dynamic "compliance_record" {
