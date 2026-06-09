@@ -13,7 +13,7 @@ and it adds the hostname to a defined already existent security configuration.
 .                           -> Delivery onboard code
 ├── delivery_rules          -> Property manager logic rules 
 └── modules
-    ├── appsec
+    ├── appsec              -> Akamai Security configuration update
     ├── dns                 -> Akamai EdgeDNS
     ├── enrollment          -> Akamai CPS DV certificate 
     ├── property            -> Akamai Property manager
