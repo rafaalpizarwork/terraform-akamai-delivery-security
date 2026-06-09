@@ -12,7 +12,7 @@ resource "akamai_property_activation" "delivery_property_staging" {
 
 # Production Activation
 resource "akamai_property_activation" "delivery_property_production" {
-  count = var.activate2staging ? 1 : 0
+  count = var.activate2production ? 1 : 0
 
   property_id                    = akamai_property.delivery_property.id
   contact                        = var.contact_emails
