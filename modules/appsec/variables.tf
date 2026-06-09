@@ -22,14 +22,14 @@ variable "contact_emails" {
 # Akamai activation
 # --------------------------------------------------
 variable "activate2staging" {
-    description = "Activate the setup to staging"
-    type = bool
-    default = false
+  description = "Activate the setup to staging"
+  type        = bool
+  default     = false
 }
 variable "activate2production" {
-    description = "Activate the setup to production"
-    type = bool
-    default = false
+  description = "Activate the setup to production"
+  type        = bool
+  default     = false
 }
 
 # --------------------------------------------------

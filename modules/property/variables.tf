@@ -26,14 +26,14 @@ variable "contact_emails" {
 # Akamai activation
 # --------------------------------------------------
 variable "activate2staging" {
-    description = "Activate the setup to staging"
-    type = bool
-    default = false
+  description = "Activate the setup to staging"
+  type        = bool
+  default     = false
 }
 variable "activate2production" {
-    description = "Activate the setup to production"
-    type = bool
-    default = false
+  description = "Activate the setup to production"
+  type        = bool
+  default     = false
 }
 variable "compliance_record" {
   type = object({
@@ -46,7 +46,7 @@ variable "compliance_record" {
     condition     = var.compliance_record == null ? true : contains(["none", "other", "no_production_traffic", "emergency"], var.compliance_record.reason)
     error_message = "Status must be one of none, no_production_traffic, emergency"
   }
-  default = null
+  default     = null
   description = "For Akamai internal change management process"
 }
 

@@ -1,6 +1,6 @@
 // Get configuration details
 data "akamai_appsec_configuration" "config" {
-    name = var.name
+  name = var.name
 }
 
 locals {

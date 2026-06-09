@@ -10,4 +10,6 @@ module "appsec" {
   activation_note     = var.activation_note
   activate2staging    = var.activate2staging
   activate2production = var.activate2production
+
+  depends_on = [module.property]
 }

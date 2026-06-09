@@ -12,8 +12,8 @@ resource "akamai_property" "delivery_property" {
       cert_provisioning_type = "CPS_MANAGED"
     }
   }
-  rules               = module.delivery_rules.rules
-  rule_format         = module.delivery_rules.rule_format
+  rules         = module.delivery_rules.rules
+  rule_format   = module.delivery_rules.rule_format
   version_notes = var.version_note
 }
 
