@@ -40,7 +40,3 @@ resource "akamai_property_activation" "delivery_property_production" {
     }
   }
 }
-
-output "delivery_staging_active_version" {
-  value = akamai_property_activation.delivery_property_staging.version
-}
