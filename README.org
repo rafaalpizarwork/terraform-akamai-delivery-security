@@ -1,0 +1,43 @@
+#+options: toc:nil
+
+* Akamai Delivery Property Onboard with Terraform
+
+** Path Structure
+#+begin_example
+.                             -> Delivery onboard code
+├── logic_module              -> Terraform module with logic rules
+│   └── delivery_rules           -> Property manager logic rules
+└── modules                   -> Terraform modules to configure Akamai platform
+    ├── dns                      -> Akamai EdgeDNS
+    ├── enrollment               -> Akamai CPS DV certificate
+    ├── property                 -> Akamai Property manager
+    └── validation               -> Akamai CPS certificate validation
+#+end_example
+
+** Introduction
+Akamai delivery property onboard code.
+
+** Use
+1. Setup you Akamai API credentials
+2. Create terraform.tfvars file (example.tfvars as reference)
+3. Run: terraform Init
+4. Run: terraform Plan
+5.  Run: terraform Apply
+
+** Import (if resources exists)
+- Enrollment (Certificate)
+- Cpcode
+- Edgehostnames
+- Property
+
+** WorkFlow
+1. Create cpcode based on property name.
+2. Create enrollment for DV certificate.
+3. Create edgehostnames enhanced-tls.
+4. Create delivery property.
+5. Push to Akamai staging and production.
+
+** Rererences
+1. [[https://github.com/akamai/terraform-examples][GitHub Akamai Terraform Examples]]
+2. [[https://terraform.aka-dev.net/][Terraform Training Github]]
+3. [[https://techdocs.akamai.com/terraform/][Akamai Terraform Documentation - TechDocs]]
