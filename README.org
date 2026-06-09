@@ -3,7 +3,7 @@
 * Akamai Delivery Property Onboard with Terraform
 
 ** Introduction
-Akamai security and delivery onboard or handling code with terraform
+Akamai security and delivery onboard or handling code with terraform.
 
 This code create a vanilla delivery config, certificate and edgehostname to onboar a brand new configuration
 and it adds the hostname to a defined already existent security configuration.
