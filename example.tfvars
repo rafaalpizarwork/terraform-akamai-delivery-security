@@ -31,7 +31,7 @@ property_hostnames = [
 dns_zone = "mydomain.com"
 
 # Security configuration
-appsec_config_name = "ion.ranet.me"
+appsec_config_name = "your.secconfig.com"
 
 # Akamai property setup
 property_notes = "Terraform property version"
