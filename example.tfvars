@@ -7,9 +7,18 @@ contract_id = "1-XXXXXX"
 group_name  = "your_group_name"
 
 # Akamai property setup
-property_notes = "Terraform property version"
-origin_server  = "origin.server.net"
-property_name  = "delete.mydomain.com_pm"
+version_note    = "Created by terraform"
+activation_note = "Activated by terraform"
+
+contact_emails = [
+  "emailr@gmail.com"
+]
+
+# Activation
+activate2staging    = true
+activate2production = false
+# Delete this for real traffic properties
+compliance_reason = "no_production_traffic"
 
 #### DNS INFORMATION: FQDN [hostname].[zone/domain]
 # Akamai digital property hostname ONLY part (not FQDN)
@@ -21,12 +30,13 @@ property_hostnames = [
 # Akamai digital property only zone part
 dns_zone = "mydomain.com"
 
-contact_emails = [
-  "emailr@gmail.com"
-]
+# Security configuration
+appsec_config_name = "ion.ranet.me"
 
-# This allows Akamai persone to push Akamai properties into internal accounts
-compliance_reason = "no_production_traffic"
+# Akamai property setup
+property_notes = "Terraform property version"
+origin_server  = "origin.server.net"
+property_name  = "delete.mydomain.com_pm"
 
 # Certifiate
 cert_contact_details = {
